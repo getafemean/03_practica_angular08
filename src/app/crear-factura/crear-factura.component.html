@@ -21,8 +21,17 @@
                     <input type="text" formControlName="cliente">
                 </div>
                 <div class="row">
-                    <label>CIF</label>
-                    <input type="text" formControlName="cif">
+                    <label>
+                        CIF
+                        <span class="success" *ngIf="formFactura.controls?.cif?.valid">
+                            &#10004;
+                        </span>
+                        <span class="alert" *ngIf="formFactura.controls?.cif?.errors?.invalidCif &&
+                                                   formFactura.controls?.cif?.dirty">
+                            {{formFactura.controls?.cif?.errors?.mensaje}}
+                        </span>
+                    </label>
+                    <input type="text" formControlName="cif" maxlength="9">
                 </div>
                 <div class="row">
                     <label>Fecha factura</label>
