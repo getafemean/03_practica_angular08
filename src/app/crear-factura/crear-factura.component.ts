@@ -17,7 +17,9 @@ export class CrearFacturaComponent implements OnInit {
     this.formFactura = new FormGroup({
       cliente: new FormControl('', [Validators.required, Validators.minLength(4)]),
       cif: new FormControl('', [ValidateCif]),
-      fechaFactura: new FormControl((new Date()).toISOString().substring(0,10))
+      fechaFactura: new FormControl((new Date()).toISOString().substring(0,10)),
+      baseImponible: new FormControl(0),
+      tipoIVA: new FormControl(null)
     })
   }
 
