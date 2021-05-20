@@ -1,0 +1,16 @@
+nav {
+    height: 80px;
+    width: 100%;
+    padding: 0 1rem;
+    box-shadow: $bottom-shadow;
+    @include flex(row, flex-end, center);
+
+    div {
+        margin-left: 0.5rem;
+        cursor: pointer;
+
+        &.active {
+            color: $primary-font-color
+        }
+    }
+}

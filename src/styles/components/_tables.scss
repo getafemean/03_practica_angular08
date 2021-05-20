@@ -1,0 +1,15 @@
+table {
+    width: 100%;
+    margin-top: 1rem;
+
+    th {
+        padding: 0.5rem 1rem;
+        background-color: $primary-font-color;
+        color: white;
+    }
+
+    td {
+        padding: 0.5rem 1rem;
+        border: 1px solid $primary-font-color;
+    }
+}

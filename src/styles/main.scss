@@ -1,0 +1,48 @@
+@import './abstracts/mixins';
+@import './abstracts/variables';
+
+@import './base/reset';
+@import './base/typography';
+
+@import './components/buttons';
+@import './components/cards';
+@import './components/forms';
+@import './components/tables';
+
+@import './layout/containers';
+@import './layout/nav';
+
+@import './pages/nba';
+
+/* Generales */
+
+html {
+    font-size: 22px;
+
+    @media (max-width: $laptop-size) {
+        & {
+            font-size: 20px;
+        }
+    }
+    
+    @media (max-width: $tablet-size) {
+        & {
+            font-size: 18px;
+        }
+    }
+}
+
+
+body {
+    font-family: $regular-font-family;
+    color: $regular-font-color;
+}
+
+h1 {
+    font-size: 1.5rem;
+    color: $primary-font-color;
+}
+
+b {
+    color: $primary-font-color;
+}
