@@ -12,4 +12,9 @@ export class CrearProductoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  addProducto(formProducto: any): void {
+    console.log(formProducto)
+    //console.log(formProducto.value)
+  }
+
 }

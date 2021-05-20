@@ -1,12 +1,58 @@
 <div class="container show">
     <div class="row">
         <div class="col-100">
-            <form>
+            <form #formProducto="ngForm" (ngSubmit)="addProducto(formProducto)">
                 <h1>Ejemplo de formulario template driven</h1>
                 <div class="row">
-                    <label>Denominación</label>
-                    <input type="text">
+                    <label>
+                        Denominación
+                        <span class="success" *ngIf="formProducto.controls?.denominacion?.valid">
+                            &#10004;
+                        </span>
+                        <span class="alert" *ngIf="formProducto.controls?.denominacion?.invalid &&
+                                                   formProducto.controls?.denominacion?.touched">
+                            La denominación es obligatoria
+                        </span>
+                    </label>
+                    <input type="text" name="denominacion" ngModel="" required>
                 </div>
+                <div class="row">
+                    <label>
+                        SKU
+                        <span class="success" *ngIf="formProducto.controls?.sku?.valid">
+                            &#10004;
+                        </span>
+                        <span class="alert" *ngIf="formProducto.controls?.sku?.errors?.required &&
+                                                   formProducto.controls?.sku?.touched">
+                            El SKU es obligatorio
+                        </span>
+                        <span class="alert" *ngIf="formProducto.controls?.sku?.errors?.minlength &&
+                                                   formProducto.controls?.sku?.dirty">
+                            El SKU debe tener 6 caracteres
+                        </span>
+                    </label>
+                    <input type="text" name="sku" ngModel="" required minlength="6" maxlength="6">
+                </div>
+                <div class="row">
+                    <label>Almacén</label>
+                    <input type="text" name="almacen" ngModel="">
+                </div>
+                <div class="row">
+                    <label>Precio</label>
+                    <input type="number" name="precio" ngModel="">
+                </div>
+                <div class="flex j-end center m-t">
+                    <button type="button" class="outline">Cancelar</button>
+                    <button type="submit" class="m-l-small">Añadir</button>
+                </div>
+                <!-- <div class="row">
+                    <pre>pristine: {{formProducto.controls.sku.pristine}}</pre>
+                    <pre>dirty: {{formProducto.controls.sku.dirty}}</pre>
+                    <pre>touched: {{formProducto.controls.sku.touched}}</pre>
+                    <pre>untouched: {{formProducto.controls.sku.untouched}}</pre>
+                    <pre>invalid: {{formProducto.controls.sku.invalid}}</pre>
+                    <pre>valid: {{formProducto.controls.sku.valid}}</pre>
+                </div> -->
             </form>
         </div>
     </div>

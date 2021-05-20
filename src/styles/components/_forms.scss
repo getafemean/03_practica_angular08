@@ -18,9 +18,19 @@ form {
         @include flex(column, flex-start, flex-start);
 
         label {
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             margin-bottom: 0.4rem;
             text-transform: uppercase;
+
+            .success {
+                font-size: 0.6rem;
+                color: $success-color;
+            }
+
+            .alert {
+                font-size: 0.6rem;
+                color: $danger-color
+            }
         }
 
         input {
