@@ -1,0 +1,38 @@
+<div class="container show">
+    <div class="row">
+        <div class="col-100">
+            <form [formGroup]="formFactura">
+                <h1>Ejemplo de formulario reactive forms</h1>
+                <div class="row">
+                    <label>
+                        Cliente
+                        <span class="success" *ngIf="formFactura.controls?.cliente?.valid">
+                            &#10004;
+                        </span>
+                        <span class="alert" *ngIf="formFactura.controls?.cliente?.errors?.required &&
+                                                   formFactura.controls?.cliente?.touched">
+                            El cliente es obligatorio
+                        </span>
+                        <span class="alert" *ngIf="formFactura.controls?.cliente?.errors?.minlength &&
+                                                   formFactura.controls?.cliente?.dirty">
+                            El cliente debe tener al menos 4 caracteres
+                        </span>
+                    </label>
+                    <input type="text" formControlName="cliente">
+                </div>
+                <div class="row">
+                    <label>CIF</label>
+                    <input type="text" formControlName="cif">
+                </div>
+                <div class="row">
+                    <label>Fecha factura</label>
+                    <input type="date" formControlName="fechaFactura">
+                </div>
+                <div class="flex j-end a-center m-t">
+                    <button type="button" class="outline">Cancelar</button>
+                    <button type="submit" class="m-l-small" [disabled]="formFactura.invalid">Añadir</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
