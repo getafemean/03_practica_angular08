@@ -21,6 +21,12 @@ button {
         background-color: $darker-primary-font-color;
     }
 
+    &[disabled] {
+        background-color: #adadad;
+        border: 1px solid #adadad;
+        cursor: not-allowed;
+    }
+
     &.icon {
         @include flex(row, center, center);
 

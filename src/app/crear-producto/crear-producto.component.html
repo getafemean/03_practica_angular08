@@ -14,7 +14,7 @@
                             La denominación es obligatoria
                         </span>
                     </label>
-                    <input type="text" name="denominacion" ngModel="" required>
+                    <input type="text" name="denominacion" ngModel="" required #denominacion>
                 </div>
                 <div class="row">
                     <label>
@@ -43,7 +43,7 @@
                 </div>
                 <div class="flex j-end center m-t">
                     <button type="button" class="outline">Cancelar</button>
-                    <button type="submit" class="m-l-small">Añadir</button>
+                    <button type="submit" class="m-l-small" [disabled]="formProducto.invalid">Añadir</button>
                 </div>
                 <!-- <div class="row">
                     <pre>pristine: {{formProducto.controls.sku.pristine}}</pre>

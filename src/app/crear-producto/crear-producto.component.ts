@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-crear-producto',
@@ -7,13 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrearProductoComponent implements OnInit {
 
+  @ViewChild('denominacion') denominacionRef: ElementRef;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  ngAfterViewInit() {
+    this.denominacionRef.nativeElement.focus()
+  }
+
   addProducto(formProducto: any): void {
-    console.log(formProducto)
+    console.log(formProducto);
+    formProducto.reset();
+    this.denominacionRef.nativeElement.focus()
     //console.log(formProducto.value)
   }
 
