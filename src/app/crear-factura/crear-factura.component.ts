@@ -25,6 +25,14 @@ export class CrearFacturaComponent implements OnInit {
       totalFactura: new FormControl(0)
     })
     this.actualizarFactura();
+    if(localStorage.getItem('borradorFra')) {
+      let borradorFra = JSON.parse(localStorage.getItem('borradorFra'));
+      this.formFactura.get('cliente').setValue(borradorFra.cliente);
+      this.formFactura.get('cif').setValue(borradorFra.cif);
+      this.formFactura.get('fechaFactura').setValue(borradorFra.fechaFactura);
+      this.formFactura.get('baseImponible').setValue(borradorFra.baseImponible);
+      this.formFactura.get('tipoIVA').setValue(borradorFra.tipoIVA);
+    }
   }
 
   actualizarFactura() {
@@ -43,7 +51,7 @@ export class CrearFacturaComponent implements OnInit {
   }
 
   guardarBorrador() {
-    let factura = {...this.formFactura.value, user: this.user};
+    let factura = {...this.formFactura.value};
     localStorage.setItem('borradorFra', JSON.stringify(factura))
   }
 

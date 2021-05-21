@@ -47,6 +47,8 @@ form {
             }
         
             &-50 {
+                display: flex; // All credits to Enrique
+                flex-direction: column;
                 padding: 0;
             }
             

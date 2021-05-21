@@ -66,13 +66,13 @@
                 <div class="row">
                     <div class="col-50"></div>
                     <div class="col-50">
-                        <label>Total Factura IVA incluido</label>
+                        <label class="label-coge-el-margin-please">Total Factura IVA incluido</label>
                         <input type="number" formControlName="totalFactura">
                     </div>
                 </div>
                 <div class="flex j-end a-center m-t">
                     <button type="button" class="outline">Cancelar</button>
-                    <button type="button" class="outline" (click)="guardarBorrador()">Guardar borrador</button>
+                    <button type="button" class="outline m-l-small" (click)="guardarBorrador()">Guardar borrador</button>
                     <button type="submit" class="m-l-small" [disabled]="formFactura.invalid">Añadir</button>
                 </div>
             </form>
